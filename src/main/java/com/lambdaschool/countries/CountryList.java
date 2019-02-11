@@ -236,4 +236,61 @@ public class CountryList
         }
         return letterCountries;
     }
+
+    public ArrayList<Country> equalorGreaterPop(long num)
+    {
+        ArrayList<Country> greater = new ArrayList<Country>();
+        for (Country c : countryList)
+        {
+            if (c.getPopulation() >= num)
+            {
+                greater.add(c);
+            }
+        }
+        return greater;
+    }
+
+    public Country smallestPopCountry()
+    {
+        Country smallest = null;
+        long smallestPop = Long.MAX_VALUE;
+        for (Country c : countryList)
+        {
+            if (c.getPopulation() < smallestPop)
+            {
+                smallest = c;
+                smallestPop = c.getPopulation();
+            }
+        }
+        if (smallest == null)
+        {
+            return null;
+        }
+        else
+        {
+            return smallest;
+        }
+    }
+
+    public Country largestPopCountry()
+    {
+        Country largest = null;
+        long largestPop = 0;
+        for (Country c : countryList)
+        {
+            if (c.getPopulation() > largestPop)
+            {
+                largest = c;
+                largestPop = c.getPopulation();
+            }
+        }
+        if (largest == null)
+        {
+            return null;
+        }
+        else
+        {
+            return largest;
+        }
+    }
 }
