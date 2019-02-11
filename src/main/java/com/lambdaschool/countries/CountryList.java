@@ -293,4 +293,60 @@ public class CountryList
             return largest;
         }
     }
+    public ArrayList<Country> equalorGreaterAge(long num)
+    {
+        ArrayList<Country> greater = new ArrayList<Country>();
+        for (Country c : countryList)
+        {
+            if (c.getMedianAge() >= num)
+            {
+                greater.add(c);
+            }
+        }
+        return greater;
+    }
+
+    public Country smallestAgeCountry()
+    {
+        Country smallest = null;
+        int smallestAge = Integer.MAX_VALUE;
+        for (Country c : countryList)
+        {
+            if (c.getMedianAge() < smallestAge)
+            {
+                smallest = c;
+                smallestAge = c.getMedianAge();
+            }
+        }
+        if (smallest == null)
+        {
+            return null;
+        }
+        else
+        {
+            return smallest;
+        }
+    }
+
+    public Country largestAgeCountry()
+    {
+        Country largest = null;
+        long largestAge = 0;
+        for (Country c : countryList)
+        {
+            if (c.getMedianAge() > largestAge)
+            {
+                largest = c;
+                largestAge = c.getMedianAge();
+            }
+        }
+        if (largest == null)
+        {
+            return null;
+        }
+        else
+        {
+            return largest;
+        }
+    }
 }
